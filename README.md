@@ -8,15 +8,29 @@ Preview of the site with no dev set: https://markdurrheim.github.io/simple-stati
 
 Pre-built Docker image: https://hub.docker.com/r/durrheimmark/simple-static-site
 
+## Playwright CLI
+
+Ensure that you have `playwright-cli` installed
+
+```shell
+npm install -g @playwright/cli
+```
+
+## Local Dev
+
+You can do quick and easy local previews with the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) VS Code Extension.
+
+The workspace setting to target the `/static` folder is already set up.
+
 ## Docker
 Build the image
 ```shell
-docker build -t simple-static-site:1.1 .
+docker build -t simple-playwright .
 ```
 
 Run in Docker
 ```shell
-docker run --name=simple-static-site -e DEV_NAME="YOUR NAME" -p 9082:8080 simple-static-site:1.1
+docker run --name=simple-playwright -e DEV_NAME="YOUR NAME" -p 9082:8080 simple-playwright
 ```
 
 Open in browser (PowerShell)
@@ -37,10 +51,10 @@ oc apply -f .\deploy.yaml -f .\openshift-route.yaml
 
 Enable port-forwarding for the service at http://localhost:9082
 ```shell
-kubectl port-forward service/simple-static-site-service 9082:8080
+kubectl port-forward service/simple-playwright-service 9082:8080
 ```
 
 Minikube can port-forward and open with the command
 ````shell
-minikube service simple-static-site-service
+minikube service simple-playwright-service
 ````
