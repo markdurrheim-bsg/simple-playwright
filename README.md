@@ -8,6 +8,20 @@ Preview of the site with no dev set: https://markdurrheim.github.io/simple-stati
 
 Pre-built Docker image: https://hub.docker.com/r/durrheimmark/simple-static-site
 
+## Playwright CLI
+
+Ensure that you have `playwright-cli` installed
+
+```shell
+npm install -g @playwright/cli
+```
+
+## Local Dev
+
+You can do quick and easy local previews with the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) VS Code Extension.
+
+The workspace setting to target the `/static` folder is already set up.
+
 ## Docker
 Build the image
 ```shell
